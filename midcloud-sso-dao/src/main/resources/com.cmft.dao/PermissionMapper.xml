@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmft.dao.PermissionMapper">
+
+    <resultMap id="result" type="com.cmft.bean.PermissionDO">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="route" column="route"/>
+        <result property="code" column="code"/>
+        <result property="summary" column="summary"/>
+        <result property="cteTm" column="cte_tm"/>
+        <result property="uptTm" column="uptTm"/>
+    </resultMap>
+
+    <sql id="columns">id, name, parent_id, route, code, summary, cte_tm, upt_tm</sql>
+
+    <select id="queryPermissionByUserId" resultType="com.cmft.bean.PermissionDO">
+        select
+            sp.id, sp.name, sp.parent_id, sp.route, sp.code, sp.summary, sp.cte_tm, sp.upt_tm
+         from sso_permission sp
+            inner join sso_role_permission srp on sp.id = srp.permission_id
+            inner join sso_role sr on srp.role_id = sr.id
+            inner join sso_user_role sur on srp.role_id = sur.role_id
+            where sur.user_id = #{userId}
+    </select>
+
+    <select id="queryUrlByCode" resultType="java.lang.String">
+        select route from sso_permission where code = #{code}
+    </select>
+
+
+</mapper>
+

@@ -1,0 +1,5 @@
+rootProject.name = 'midcloud-sso'
+include 'midcloud-sso-core'
+include 'midcloud-sso-server'
+include 'midcloud-sso-dao'
+

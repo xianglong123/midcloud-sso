@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmft.dao.UserMapper">
+
+    <resultMap id="result" type="com.cmft.bean.UserDO">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="cteTm" column="cte_tm"/>
+        <result property="uptTm" column="uptTm"/>
+    </resultMap>
+
+    <sql id="columns">id, username, password, cte_tm, upt_tm</sql>
+
+    <select id="queryByName" resultType="com.cmft.bean.UserDO" parameterType="string">
+        select
+        <include refid="columns"/>
+        from sso_user
+        where username = #{username}
+    </select>
+
+</mapper>
+

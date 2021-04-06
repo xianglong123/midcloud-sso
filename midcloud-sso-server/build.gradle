@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(":midcloud-sso-core")
+    implementation project(":midcloud-sso-dao")
+    implementation 'com.alibaba:fastjson:1.2.61'
+}

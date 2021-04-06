@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmft.dao.SystemMapper">
+
+    <resultMap id="result" type="com.cmft.bean.SystemDO">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="url" column="url"/>
+        <result property="cteTm" column="cte_tm"/>
+        <result property="uptTm" column="uptTm"/>
+    </resultMap>
+
+    <sql id="columns">id, name, url, cte_tm, upt_tm</sql>
+
+    <select id="queryUrlByCode" resultType="java.lang.String">
+        select url from sso_system s1
+            inner join sso_role_system s2 on s1.id = s2.system_id
+            inner join sso_role_permission s3 on s2.role_id = s3.role_id
+            inner join sso_permission s4 on s3.permission_id = s4.id
+            where s4.code = #{code};
+    </select>
+
+
+</mapper>
+

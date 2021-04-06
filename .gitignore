@@ -1,0 +1,8 @@
+# Project exclude paths
+/.gradle/
+/midcloud-sso-core/build/
+/midcloud-sso-core/build/classes/java/main/
+/midcloud-sso-dao/build/
+/midcloud-sso-dao/build/classes/java/main/
+/midcloud-sso-server/build/
+/midcloud-sso-server/build/classes/java/main/
