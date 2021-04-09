@@ -14,6 +14,7 @@ public class XxlSsoUser implements Serializable {
     // field
     private String userid;
     private String username;
+    private String password;
     private Map<String, String> plugininfo;
 
     private String version;
@@ -22,6 +23,15 @@ public class XxlSsoUser implements Serializable {
 
 
     // set get
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getUserid() {
         return userid;
     }

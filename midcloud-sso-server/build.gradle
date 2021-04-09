@@ -3,3 +3,8 @@ dependencies {
     implementation project(":midcloud-sso-dao")
     implementation 'com.alibaba:fastjson:1.2.61'
 }
+
+bootJar {
+    enabled = true
+    mainClassName = 'com.cmft.server.XxlSsoServerApplication'
+}

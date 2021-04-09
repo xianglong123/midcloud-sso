@@ -62,5 +62,5 @@ mybatis:
 midcloud:
   sso:
     redis:
-      address: redis://127.0.0.1:6379
+      address: redis://midcloud:midcloud@127.0.0.1:6379
       minute: 1440
