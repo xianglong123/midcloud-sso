@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String getUrl(String code) {
         // 系统地址
-        String url = systemMapper.queryUrlByCode(code);
+        String url = systemMapper.queryUrlByCode(code).get(0);
         // todo 为空异常处理【待做】
         // 跳转路由
         String route = permissionMapper.queryUrlByCode(code);

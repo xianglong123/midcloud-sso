@@ -1,7 +1,8 @@
 # midcloud-sso
 
-表结构
+## 表结构
 
+```sql
 create schema if not exists sso collate utf8mb4_0900_ai_ci;
 
 create table if not exists sso_permission
@@ -75,4 +76,7 @@ create table if not exists sso_user_role
 	role_id varchar(32) null
 )
 comment '用户权限表';
+
+```
+
 

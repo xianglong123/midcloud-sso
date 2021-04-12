@@ -18,7 +18,7 @@
             inner join sso_role_system s2 on s1.id = s2.system_id
             inner join sso_role_permission s3 on s2.role_id = s3.role_id
             inner join sso_permission s4 on s3.permission_id = s4.id
-            where s4.code = #{code};
+            where s4.code = #{code}
     </select>
 
 

@@ -2,6 +2,8 @@ package com.cmft.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author: xianglong[1391086179@qq.com]
  * @date: 上午11:42 2021/3/14
@@ -11,7 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SystemMapper {
 
-    String queryUrlByCode(String code);
+    List<String> queryUrlByCode(String code);
 
 
 }
